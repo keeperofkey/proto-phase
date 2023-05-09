@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets'
+import img01 from '../assets/images/cans-1.png'
+import img02 from '../assets/images/cans-2.png'
+import img03 from '../assets/images/cans-3.png'
+import img04 from '../assets/images/cans-5.png'
+import img05 from '../assets/images/cans-7.png'
+---
+<div class="frame">
+    <Image class='img01' src={img01} alt="" />
+    <Image class='img02' src={img02} alt="" />
+    <Image class='img03' src={img03} alt="" />
+    <Image class='img04' src={img04} alt="" />
+    <Image class='img05' src={img05} alt="" />
+</div>
+<style>
+    .img01 {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .img02 {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .img03 {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+    }
+    .img04 {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+    }
+    .img05 {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+    }
+    .frame {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        z-index: -1;
+        width: 100%;
+    }
+</style>

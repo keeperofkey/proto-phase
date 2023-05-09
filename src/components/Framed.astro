@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+import img01 from '../assets/images/cans-1.png'
+import img02 from '../assets/images/cans-2.png'
+import img03 from '../assets/images/cans-3.png'
+import img04 from '../assets/images/cans-5.png'
+import img05 from '../assets/images/cans-7.png'
+---
+<div class="frame">
+    <Image class='img' src={img01} alt="" />
+    <Image class='img' src={img02} alt="" />
+    <Image class='img' src={img03} alt="" />
+    <Image class='img' src={img04} alt="" />
+    <Image class='img' src={img05} alt="" />
+</div>
+<style>
+    .img {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+    }
+    .frame {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        z-index: -1;
+        width: 100%;
+    }
+</style>
