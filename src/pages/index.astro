@@ -12,6 +12,7 @@ import Theatre from '../components/Theatre.svelte'
 		<title>Liam Dodd</title>
 	</head>
 	<body>
+		<iframe id="iframe" style="width:100%;height:auto;border:0px;" src="https://cables.gl/view/645ac57c685430381dd150c3" onclick="getIndex()"></iframe>
 		<h1>Liam Dodd</h1>
 		<div>Welcome to my little corner of the internet!</div>
 		<div>Here you'll find all sorts of weird things that tickle my fancy.</div>
@@ -22,4 +23,9 @@ import Theatre from '../components/Theatre.svelte'
 		<Theatre client:only />
 		<Menu client:only />
 	</body>
+	<script>
+		function getIndex() {
+			var x = document.getElementById('iframe')
+		}
+	</script>
 </html>
