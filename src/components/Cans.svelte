@@ -18,7 +18,7 @@ import { Environment, GLTF } from '@threlte/extras';
 		position: fixed;
 		justify-self: center;
 		top: 5;
-		height: 100vh;
-		width: 90vw;
+		height: 100%;
+		width: 100%;
 	}
 </style>

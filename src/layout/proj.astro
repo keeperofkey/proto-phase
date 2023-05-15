@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets'
+const img = await Astro.glob('../assets/images/cans*.png')
+
+---
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="stage">
+        <!-- Empty Stage -->
+        </div>
+        <div class="frame">
+            <Image class='img' src={img[0]} alt="" />
+            <div>
+            </div>
+            <div></div>
+            <Image class='img' src={img[1]} alt="" />
+            <Image class='img' src={img[2]} alt="" />
+            <div></div>
+            <div></div>
+            <Image class='img' src={img[3]} alt="" />
+            <Image class='img' src={img[4]} alt="" />
+        </div>
+
+        <style>
+            .stage {
+                display: block;
+                height: 100vh;
+                width: auto;
+            }
+            .frame {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+                z-index: 1;
+                width: 100%;
+            }
+            .img {
+                justify-self: center;
+                width: 100%;
+                height: auto;
+            }
+        </style>
+
+    </body>
+</html>

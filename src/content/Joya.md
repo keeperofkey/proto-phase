@@ -1,7 +1,0 @@
----
-title: "Joya: AiR"
-description: "An artist residency in Almeria, Spain 2018"
----
-This was a unique project that focused on both the environment and conceptual artistry. Using locally sourced materials such as soil and concrete, I created sculptures that question the relationship between natural and artificial forms. These pieces were then carefully placed within the rugged terrain shaped by the forces of nature itself - in this case, the impact of heavy rainfall on the region. 
-Joya is an ongoing exploration into the relationship between human industry and natural processes. Using discarded materials such as aluminum cans and locally sourced earth and concrete, I create intricate sculptures and installations that both celebrate and interrogate our impact on the world around us. Through my practice, I hope to inspire viewers to reflect upon their own role in shaping the environment and consider ways in which they can contribute to positive change. Come discover the beauty and complexity of Joya and join me on this journey towards sustainability and resilience.
-Exploring the intersection between humanity and nature through the lens of sustainability and conservation. By casting discarded beer cans in local soil mixed with concrete, I aimed to draw attention to the impact our consumer culture has on the environment. The installation itself was created in a region ravaged by severe storms and flooding, which serves as a reminder of how climate change affects us all. Through this piece, I hope to inspire conversation around these important issues.
