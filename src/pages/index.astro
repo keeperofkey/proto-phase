@@ -1,5 +1,6 @@
 ---
 import Menu from '../components/Menu.svelte'
+import Theatre from '../components/Theatre.svelte'
 ---
 
 <html lang="en">
@@ -18,6 +19,7 @@ import Menu from '../components/Menu.svelte'
 		<div>Take a look around! </div>
 		<div>If any questions come up don't hesitate to ask!</div>
 		<h2><a href="/joya/">Joya</a>: Artist in Residence</h2>
+		<Theatre client:only />
 		<Menu client:only />
 	</body>
 </html>

@@ -1,14 +1,22 @@
 <script lang='ts'>
   import { Canvas, T } from '@threlte/core'
+  import { Editable, Theatre } from '@threlte/theatre'
 </script>
 <div class="cube">
     <Canvas>
-       <!-- <T.OrthographicCamera makeDefault position={[10 ,10, 10]} up={[0, 0, 1]} lookAt={[1 , 2, 1]} />-->
-
-        <T.Mesh position.y={1}>
-            <T.BoxGeometry args={[1, 2, 1]} />
-            <T.MeshBasicMaterial color="hotpink" />
-        </T.Mesh>
+        <Theatre>
+            <T.PerspectiveCamera position={[5, 10, 3]}>
+                <Editable name="Camera" transform />
+            </T.PerspectiveCamera>
+    
+            <T.Mesh position.y={0.5}>
+                <Editable name="Cube" transform controls />
+                <T.BoxGeometry />
+                <T.MeshBasicMaterial color="hotpink" />
+            </T.Mesh>
+    
+            <T.GridHelper />
+        </Theatre> 
     </Canvas>
 </div>
 <style>
