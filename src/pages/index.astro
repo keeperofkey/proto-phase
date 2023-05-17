@@ -1,6 +1,6 @@
 ---
-import Menu from '../components/Menu.svelte'
-import Theatre from '../components/Theatre.svelte'
+import Style from '../styles/base.astro'
+import Joya from '../pages/joya.astro'
 ---
 
 <html lang="en">
@@ -12,20 +12,24 @@ import Theatre from '../components/Theatre.svelte'
 		<title>Liam Dodd</title>
 	</head>
 	<body>
-		<iframe id="iframe" style="width:100%;height:auto;border:0px;" src="https://cables.gl/view/645ac57c685430381dd150c3" onclick="getIndex()"></iframe>
 		<h1>Liam Dodd</h1>
 		<div>Welcome to my little corner of the internet!</div>
 		<div>Here you'll find all sorts of weird things that tickle my fancy.</div>
 		<div>Perhaps there is something for you too? </div>
 		<div>Take a look around! </div>
 		<div>If any questions come up don't hesitate to ask!</div>
-		<h2><a href="/joya/">Joya</a>: Artist in Residence</h2>
-		<Theatre client:only />
-		<Menu client:only />
+		<h2><a href="/joya/">Joya</a></h2>
 	</body>
 	<script>
-		function getIndex() {
-			var x = document.getElementById('iframe')
-		}
+
 	</script>
+	<Style />
+	<style>
+		a {
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: line-through;
+		}
+	</style>
 </html>

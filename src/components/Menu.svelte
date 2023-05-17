@@ -1,22 +1,14 @@
 <script lang='ts'>
-  import { Canvas, T } from '@threlte/core'
-  import { Editable, Theatre } from '@threlte/theatre'
+import { Canvas, T, } from "@threlte/core";
 </script>
 <div class="cube">
     <Canvas>
-        <Theatre>
-            <T.PerspectiveCamera position={[5, 10, 3]}>
-                <Editable name="Camera" transform />
-            </T.PerspectiveCamera>
-    
-            <T.Mesh position.y={0.5}>
-                <Editable name="Cube" transform controls />
-                <T.BoxGeometry />
-                <T.MeshBasicMaterial color="hotpink" />
-            </T.Mesh>
-    
-            <T.GridHelper />
-        </Theatre> 
+        <T.AmbientLight />
+        <T.Mesh >
+            <T.BoxGeometry />
+            <T.MeshStandardMaterial color="red" />
+            
+        </T.Mesh>
     </Canvas>
 </div>
 <style>

@@ -5,6 +5,8 @@ export default {
 	preprocess: sequence([vitePreprocess(), preprocessThrelte({
 		extensions: {
 			'three/examples/jsm/controls/OrbitControls': ['OrbitControls'],
+			'three/examples/jsm/controls/TransformControls': ['TransformControls'],
+			'$lib/CustomGrid': ['CustomGrid'],
 		}
 	})])
 };
