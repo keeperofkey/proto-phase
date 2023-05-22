@@ -1,6 +1,11 @@
 ---
 import Style from '../styles/base.astro'
 import Joya from '../pages/joya.astro'
+import Cube from '../components/Cube.svelte'
+import Glb from '../components/glb.astro'
+import Controls from '../components/Controls.astro'
+
+
 ---
 
 <html lang="en">
@@ -10,26 +15,35 @@ import Joya from '../pages/joya.astro'
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Liam Dodd</title>
+		<script>
+		</script>
 	</head>
 	<body>
+		<Glb />
+		<h1>Liam Dodd</h1>
+		<!--
+
 		<h1>Liam Dodd</h1>
 		<div>Welcome to my little corner of the internet!</div>
 		<div>Here you'll find all sorts of weird things that tickle my fancy.</div>
 		<div>Perhaps there is something for you too? </div>
 		<div>Take a look around! </div>
 		<div>If any questions come up don't hesitate to ask!</div>
+		 -->
 		<h2><a href="/joya/">Joya</a></h2>
-	</body>
-	<script>
 
-	</script>
+	</body>
 	<Style />
 	<style>
 		a {
-			text-decoration: none;
+			text-decoration-line: none;
+			color: ghostwhite;
+		}
+		a:visited {
+			color: ghostwhite;
 		}
 		a:hover {
-			text-decoration: line-through;
+			color: orange;
 		}
 	</style>
 </html>

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Canvas, AmbientLight, OrbitControls, PerspectiveCamera } from '@threlte/core';
+import { Canvas,  OrbitControls, PerspectiveCamera} from '@threlte/core';
 import { Environment, GLTF } from '@threlte/extras';
 </script>
 <div class="Joya">
@@ -7,10 +7,10 @@ import { Environment, GLTF } from '@threlte/extras';
 		<Environment path="/hdr/" files="music_hall_01_1k.hdr" isBackground={false}/>
 
 		<PerspectiveCamera position={{x: 5, y: 2, z:5 }} fov={50}>
-			<OrbitControls autoRotate enableDamping enableZoom={false} />
+			<OrbitControls autoRotate enableDamping enableZoom={false} enablePan={false}  />
 		</PerspectiveCamera>
 
-		<GLTF url="/models/b_cam.glb" />
+		<GLTF url="/models/can-cam.glb" />
 	</Canvas>
 </div>
 <style>
@@ -20,5 +20,6 @@ import { Environment, GLTF } from '@threlte/extras';
 		top: 5;
 		height: 100%;
 		width: 100%;
+		z-index: 2;
 	}
 </style>

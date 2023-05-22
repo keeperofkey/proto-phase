@@ -1,0 +1,29 @@
+---
+import Cans from '../components/Cans.svelte';
+import Img from '../components/Framed.astro';
+import Style from '../styles/base.astro'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Joya: AiR</title>
+	</head>
+	<body>
+		<h1>Joya: Artist Residency</h1>
+		<Cans client:only />
+		<Img />
+	</body>
+	<style>
+		body {
+			display: grid;
+		}
+		h1 {
+			z-index: 3;
+		}
+	</style>
+	<Style />
+</html>

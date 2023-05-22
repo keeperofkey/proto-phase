@@ -7,7 +7,7 @@ const img = await Astro.glob('../assets/images/cans*.png')
 </div>
 <div class="frame">
     <Image class='img' src={img[0].default.src} width={img[0].default.width} height={img[0].default.height} alt="" />
-    <div class="copy">
+    <div class="copyup">
         This was a unique project that focused on both the environment and conceptual artistry. Using locally sourced materials such as soil and concrete, I created sculptures that question the relationship between natural and artificial forms. These pieces were then carefully placed within the rugged terrain shaped by the forces of nature itself - in this case, the impact of heavy rainfall on the region.
     </div>
     <div class="copy">
@@ -15,7 +15,7 @@ const img = await Astro.glob('../assets/images/cans*.png')
     </div>
     <Image class='img' src={img[1].default.src} width={img[1].default.width} height={img[1].default.height} alt="" />
     <Image class='img' src={img[2].default.src} width={img[2].default.width} height={img[2].default.height} alt="" />
-    <div class="copy">
+    <div class="copyup">
         Exploring the intersection between humanity and nature through the lens of sustainability and conservation. By casting discarded beer cans in local soil mixed with concrete, I aimed to draw attention to the impact our consumer culture has on the environment. The installation itself was created in a region ravaged by severe storms and flooding, which serves as a reminder of how climate change affects us all. Through this piece, I hope to inspire conversation around these important issues.
     </div>
     <div class="copy">
@@ -23,7 +23,7 @@ const img = await Astro.glob('../assets/images/cans*.png')
     </div>
     <Image class='img' src={img[3].default.src} width={img[3].default.width} height={img[3].default.height} alt="" />
     <Image class='img' src={img[4].default.src} width={img[4].default.width} height={img[4].default.height} alt="" />
-    <div class="copy">
+    <div class="copyup">
 
     </div>
 </div>
@@ -47,8 +47,20 @@ const img = await Astro.glob('../assets/images/cans*.png')
         justify-self: center;
         width: 100%;
         height: auto;
+        z-index: 4;
     }
     .copy {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1vw;
+        font-weight: 600;
+        pointer-events: none;
+        z-index: 1;
+    }
+    .copyup {
+
         display: flex;
         justify-content: center;
         align-items: center;

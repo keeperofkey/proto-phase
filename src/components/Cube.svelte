@@ -1,35 +1,28 @@
 <script lang='ts'>
-    import { Canvas, T, useFrame } from '@threlte/core'
-    import { interactivity } from '@threlte/extras'
-    import { spring } from 'svelte/motion'
-  
-    interactivity()
-    const scale = spring(1)
-    let rotation = 0
-    useFrame((state, delta) => {
-      rotation += delta
-    })
+  import * as THREE from 'three';
+
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer();
+
+  renderer. setSize( window.innerWidth, window.innerHeight );
+  document.body.appendChild( renderer.domElement );
+  //
+  const geo = new THREE.DodecahedronGeometry( 2)
+  const mat = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+  const mesh = new THREE.Mesh( geo, mat );
+
+
+
+
+  scene.add( mesh );
+  camera.position.z = 5;
+  function animate() {
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera );
+  }
+  animate();
 </script>
-<Canvas>
-  
-  <T.PerspectiveCamera
-    makeDefault
-    position={[10, 10, 10]}
-    on:create={({ ref }) => {
-      ref.lookAt(0, 1, 0)
-    }}
-  />
-  
-  <T.DirectionalLight position={[3, 10, 7]} />
-  
-  <T.Mesh
-    rotation.y={rotation}
-    position.y={1}
-    scale={$scale}
-    on:pointerenter={() => scale.set(1.5)}
-    on:pointerleave={() => scale.set(1)}
-  >
-    <T.BoxGeometry args={[1, 2, 1]} />
-    <T.MeshStandardMaterial color="hotpink" />
-  </T.Mesh>
-</Canvas>
+<style>
+</style>

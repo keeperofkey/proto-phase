@@ -1,6 +1,7 @@
 ---
 import Cans from '../components/Cans.svelte';
-import Img from '../components/Framed.astro'
+import Img from '../components/Framed.astro';
+import Style from '../styles/base.astro'
 ---
 
 <html lang="en">
@@ -20,5 +21,9 @@ import Img from '../components/Framed.astro'
 		body {
 			display: grid;
 		}
+		h1 {
+			z-index: 3;
+		}
 	</style>
+	<Style />
 </html>
