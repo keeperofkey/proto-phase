@@ -2,8 +2,7 @@
 import Style from '../styles/base.astro'
 import Joya from '../pages/joya.astro'
 import Cube from '../components/Cube.svelte'
-import Glb from '../components/glb.astro'
-import Controls from '../components/Controls.astro'
+import Glb from '../components/glb.svelte'
 
 
 ---
@@ -19,7 +18,7 @@ import Controls from '../components/Controls.astro'
 		</script>
 	</head>
 	<body>
-		<Glb />
+		<Glb client:only />
 		<h1>Liam Dodd</h1>
 		<!--
 
@@ -31,7 +30,7 @@ import Controls from '../components/Controls.astro'
 		<div>If any questions come up don't hesitate to ask!</div>
 		 -->
 		<h2><a href="/joya/">Joya</a></h2>
-
+		<div class="stage"></div>
 	</body>
 	<Style />
 	<style>
@@ -44,6 +43,9 @@ import Controls from '../components/Controls.astro'
 		}
 		a:hover {
 			color: orange;
+		}
+		.stage {
+			height: 400vh;
 		}
 	</style>
 </html>

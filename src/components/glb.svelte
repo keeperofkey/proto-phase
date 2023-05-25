@@ -1,9 +1,6 @@
----
-
----
-<script>
+<div class="stage"></div>
+<script lang=ts>
 import * as THREE from 'three';
-import frame from '../components/canvas.html'
 
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -20,28 +17,25 @@ let anim: THREE.AnimationClip[]
 let cams
 let mixer: THREE.AnimationMixer
 let action: THREE.AnimationAction
-let clip
-let nextpos
-let nextrot
 let time: THREE.Clock
-
+let scrollDirection: number | boolean
+let pageLength: number
+let frameIncrement: number
 let focus = new THREE.Vector3();
-let quat = new THREE.Quaternion();
-const raycaster = new THREE.Raycaster();
-const pointer = new THREE.Vector2();
 const Clock = new THREE.Clock();
 init();
-// animate();
 
-function init() {
+function init(this: any) {
 
     const container = document.createElement('div');
     container.style.position = 'fixed';
     container.style.top = '0';
     container.style.left = '0';
     container.style.zIndex = '-1';
+    container.style.width = '100%';
+    container.style.overflow = 'auto';
     document.body.appendChild( container );
-    
+
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 20 );
     camera.position.set( -10, 10, 10 );
@@ -52,25 +46,25 @@ function init() {
 
     new GLTFLoader()
         .setPath( 'models/' )
-        .load( 'can-cam.glb', function ( gltf ) {
+        .load( 'can-cam.glb', function ( gltf: any ) {
 
             anim = gltf.animations;
             cams = gltf.cameras;
             camera = cams[0]
             mixer = new THREE.AnimationMixer( gltf )
             action = mixer.clipAction( anim[0], camera );
-            action.play()
             model = gltf.scene;
-            console.log(anim)
-            console.log(camera)
+            action.play()
+            action.paused = true;
+            pageLength = (((anim[0].duration * 24) / frameIncrement) * window.innerHeight);
+
+            //console.log(action)
+            // console.log(camera)
             console.log(mixer)
             document.addEventListener( 'scroll', onScroll );
             window.addEventListener( 'resize', onWindowResize );
-            document.addEventListener( 'pointer', onPoint );
-            window.addEventListener('pointermove', onPointerMove);
             scene.add( model );
             JSON.stringify(scene)
-            animate();
 
 
         } );
@@ -80,6 +74,7 @@ function init() {
     renderer.setSize( window.innerWidth, window.innerHeight );
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
+    container.style.height = '400vh';
     container.appendChild( renderer.domElement );
 
     const environment = new RoomEnvironment();
@@ -94,37 +89,44 @@ function init() {
     // controls.target.set( 0, 0.35, 0 );
     // controls.update();
 
-}
-function handleScroll(event) {
-const scrollDirection = Math.sign(event.deltaY); // -1 for scroll up, 1 for scroll down
-
-// Adjust the current frame of the animation based on scroll direction
-const currentFrame = action.time;
-const frameIncrement = 0.01; // Adjust this value as needed
-action.time = currentFrame + frameIncrement * scrollDirection;
-
-// Render the updated frame
-requestAnimationFrame(render);
-}
-function onPointerMove( e ) {
-    pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
-    pointer.y = (e.clientY / window.innerHeight) * 2 + 1;
-}
-function onPoint () {
+    // animate();
 
 }
-function wait(ms: number | undefined) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-function onScroll() {
+
+
+function onScroll(this: any) {
     // play a single frame of the animation on scroll
     // get scroll percentage and normalize it
+
+    frameIncrement = 0.1;
+
     let scroll = window.scrollY / (document.body.scrollHeight - window.innerHeight)
+
+    scrollDirection = this.oldScroll > window.scrollY
+    this.oldScroll = window.scrollY
+ 
+    // Adjust the current frame of the animation based on scroll direction
+    const currentFrame = action.time;
+    // console.log(currentFrame)
+        if (action.time < action.getClip().duration && action.time >= 0) {
+            if (scrollDirection) {
+                action.time = currentFrame - frameIncrement;
+            } else {
+                action.time = currentFrame + frameIncrement;
+            }
+        } else {
+            action.time = 0;
+        }
+
+    // console.log(action.time)
+    // Render the updated frame
+    requestAnimationFrame(animate);
+
+    animate();
     // console.log(scroll)
-
-    let results = mixer.clipAction( anim[0] ).play() 
-    console.log(results)
-
+    // set the animation time to the percentage
+    // action.time = scroll * action.getClip().duration
+    // console.log(action.time)
     
 }
 
@@ -168,7 +170,4 @@ function render() {
 }
 </script>
 <style>
-    body {
-        height: 400vh;
-    }
 </style>
