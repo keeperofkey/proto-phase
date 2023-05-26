@@ -35,7 +35,8 @@ function init(this: any) {
     container.style.width = '100%';
     container.style.overflow = 'auto';
     document.body.appendChild( container );
-
+    document.body.scrollTo(0, 0);
+    document.body.scrollBy({top: 1, left: 0, behavior: 'instant'});
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 20 );
     camera.position.set( -10, 10, 10 );
@@ -65,6 +66,7 @@ function init(this: any) {
             window.addEventListener( 'resize', onWindowResize );
             scene.add( model );
             JSON.stringify(scene)
+            animate();
 
 
         } );
@@ -74,60 +76,35 @@ function init(this: any) {
     renderer.setSize( window.innerWidth, window.innerHeight );
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
-    container.style.height = '400vh';
     container.appendChild( renderer.domElement );
 
     const environment = new RoomEnvironment();
     const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
-    scene.background = new THREE.Color( 0xbbbbbb );
+    scene.background = new THREE.Color( 0xf5f5f5 );
     scene.environment = pmremGenerator.fromScene( environment ).texture;
-    // controls = new OrbitControls( camera, renderer.domElement );
-    // controls.enableDamping = true;
-    // controls.minDistance = 1;
-    // controls.maxDistance = 10;
-    // controls.target.set( 0, 0.35, 0 );
-    // controls.update();
+    controls = new OrbitControls( camera, renderer.domElement );
+    controls.enableDamping = true;
+    controls.minDistance = 1;
+    controls.maxDistance = 10;
+    controls.target.set( 0, 0.35, 0 );
+    controls.update();
 
-    // animate();
+    animate();
 
 }
 
 
-function onScroll(this: any) {
-    // play a single frame of the animation on scroll
-    // get scroll percentage and normalize it
-
-    frameIncrement = 0.1;
-
+function onScroll() {
+    // Normalize scroll position to 0-1
     let scroll = window.scrollY / (document.body.scrollHeight - window.innerHeight)
-
-    scrollDirection = this.oldScroll > window.scrollY
-    this.oldScroll = window.scrollY
- 
-    // Adjust the current frame of the animation based on scroll direction
-    const currentFrame = action.time;
-    // console.log(currentFrame)
-        if (action.time < action.getClip().duration && action.time >= 0) {
-            if (scrollDirection) {
-                action.time = currentFrame - frameIncrement;
-            } else {
-                action.time = currentFrame + frameIncrement;
-            }
-        } else {
-            action.time = 0;
-        }
-
+    // Clamp scroll position (0-1) insures you dont go out of animation bounds
+    const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
+    scroll = clamp(scroll, 0, 0.99)
+    // Set the animation time to the scroll position mapped to the animation duration 
+    action.time = scroll * action.getClip().duration
     // console.log(action.time)
-    // Render the updated frame
-    requestAnimationFrame(animate);
-
-    animate();
-    // console.log(scroll)
-    // set the animation time to the percentage
-    // action.time = scroll * action.getClip().duration
-    // console.log(action.time)
-    
+    // console.log(scroll) 
 }
 
 
@@ -169,5 +146,10 @@ function render() {
 
 }
 </script>
-<style>
+<style lang="scss">
+    $beaver: #8C7865ff;
+    $silver: #BABABAff;
+    $dim-gray: #686862ff;
+    $jet: #2B2C2Cff;
+    $battleship-gray: #87837Eff;
 </style>
