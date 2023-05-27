@@ -35,8 +35,6 @@ function init(this: any) {
     container.style.width = '100%';
     container.style.overflow = 'auto';
     document.body.appendChild( container );
-    document.body.scrollTo(0, 0);
-    document.body.scrollBy({top: 1, left: 0, behavior: 'instant'});
 
     camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 20 );
     camera.position.set( -10, 10, 10 );
