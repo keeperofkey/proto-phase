@@ -2,27 +2,16 @@
 <script lang=ts>
 import * as THREE from 'three';
 
-
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
-// import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
-import type { claim_space } from 'svelte/internal';
-    import mod from 'astro/zod';
 
 let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRenderer, controls: { enableDamping: boolean; minDistance: number; maxDistance: number; target: { set: (arg0: number, arg1: number, arg2: number) => void; }; update: () => void; };
 let model: THREE.Object3D<THREE.Event>
 let anim: THREE.AnimationClip[]
-let home: THREE.Euler
 let mixer: THREE.AnimationMixer
 let action: THREE.AnimationAction
-let time: THREE.Clock
-let scrollDirection: number | boolean
-let pageLength: number
-let frameIncrement: number
-let focus = new THREE.Vector3();
 const Clock = new THREE.Clock();
 init();
 // animate();
@@ -49,7 +38,6 @@ function init(this: any) {
             mixer = new THREE.AnimationMixer( gltf )
             action = mixer.clipAction( anim[0], camera );
             model = gltf.scene.children[0].children[0];
-            home = model.rotation
 
             action.play()
             action.paused = true;
@@ -79,7 +67,7 @@ function init(this: any) {
     const environment = new RoomEnvironment();
     const pmremGenerator = new THREE.PMREMGenerator( renderer );
 
-    scene.background = new THREE.Color( 0xf5f5f5 );
+    scene.background = new THREE.Color( 0xf5f5f5f5);
     scene.environment = pmremGenerator.fromScene( environment ).texture;
     // controls = new OrbitControls( camera, renderer.domElement );
     // controls.enableDamping = true;
