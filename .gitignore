@@ -2,7 +2,8 @@
 dist/
 # generated types
 .astro/
-
+# heavy models
+public/models/willow.pcd
 # dependencies
 node_modules/
 
