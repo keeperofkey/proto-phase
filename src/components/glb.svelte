@@ -3,18 +3,19 @@
 import * as THREE from 'three';
 
 
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+// import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
 
 import type { claim_space } from 'svelte/internal';
+    import mod from 'astro/zod';
 
 let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRenderer, controls: { enableDamping: boolean; minDistance: number; maxDistance: number; target: { set: (arg0: number, arg1: number, arg2: number) => void; }; update: () => void; };
 let model: THREE.Object3D<THREE.Event>
 let anim: THREE.AnimationClip[]
-let cams
+let home: THREE.Euler
 let mixer: THREE.AnimationMixer
 let action: THREE.AnimationAction
 let time: THREE.Clock
@@ -24,7 +25,7 @@ let frameIncrement: number
 let focus = new THREE.Vector3();
 const Clock = new THREE.Clock();
 init();
-
+// animate();
 function init(this: any) {
 
     const container = document.createElement('div');
@@ -36,33 +37,32 @@ function init(this: any) {
     container.style.overflow = 'auto';
     document.body.appendChild( container );
 
-    camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 20 );
-    camera.position.set( -10, 10, 10 );
-    camera.lookAt(focus);
-
     scene = new THREE.Scene();
+    
     // model
-
     new GLTFLoader()
         .setPath( 'models/' )
         .load( 'can-cam.glb', function ( gltf: any ) {
 
             anim = gltf.animations;
-            cams = gltf.cameras;
-            camera = cams[0]
+            camera = gltf.cameras[0];
             mixer = new THREE.AnimationMixer( gltf )
             action = mixer.clipAction( anim[0], camera );
-            model = gltf.scene;
+            model = gltf.scene.children[0].children[0];
+            home = model.rotation
+
             action.play()
             action.paused = true;
-            pageLength = (((anim[0].duration * 24) / frameIncrement) * window.innerHeight);
-
-            //console.log(action)
+            // console.log(action)
             // console.log(camera)
-            console.log(mixer)
+            // console.log(mixer)
             document.addEventListener( 'scroll', onScroll );
+            // window.addEventListener( 'click', onClick );
+            window.addEventListener('mousedown', onMouseDown);
+            window.addEventListener('mouseup', onMouseUp);
             window.addEventListener( 'resize', onWindowResize );
-            scene.add( model );
+            console.log(model)
+            scene.add( gltf.scene );
             JSON.stringify(scene)
             animate();
 
@@ -81,14 +81,13 @@ function init(this: any) {
 
     scene.background = new THREE.Color( 0xf5f5f5 );
     scene.environment = pmremGenerator.fromScene( environment ).texture;
-    controls = new OrbitControls( camera, renderer.domElement );
-    controls.enableDamping = true;
-    controls.minDistance = 1;
-    controls.maxDistance = 10;
-    controls.target.set( 0, 0.35, 0 );
-    controls.update();
+    // controls = new OrbitControls( camera, renderer.domElement );
+    // controls.enableDamping = true;
+    // controls.minDistance = 1;
+    // controls.maxDistance = 10;
+    // controls.target.set( 0, 0.35, 0 );
+    // controls.update();
 
-    animate();
 
 }
 
@@ -104,7 +103,24 @@ function onScroll() {
     // console.log(action.time)
     // console.log(scroll) 
 }
+let internalId: NodeJS.Timer
 
+  function onMouseDown() {
+    // console.log('mouse down')
+    internalId = setInterval(() => {
+      model.rotation.y += 0.1;
+    }, 25);
+
+  }
+
+  function onMouseUp() {
+    // console.log('mouse up')
+    model.rotation.set(0, 0, 0);
+    clearInterval(internalId);
+  }
+
+  window.addEventListener('mousedown', onMouseDown);
+  window.addEventListener('mouseup', onMouseUp);
 
 function onWindowResize() {
 
