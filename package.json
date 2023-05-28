@@ -25,7 +25,7 @@
     "@threlte/extras": "^4.9.3",
     "@threlte/preprocess": "^0.0.2",
     "@threlte/theatre": "^0.0.2",
-    "@types/three": "^0.152.0",
+    "@types/three": "^0.152.1",
     "svelte-sequential-preprocessor": "^1.0.0",
     "three": "^0.152.2"
   }

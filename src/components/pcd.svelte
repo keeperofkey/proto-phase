@@ -1,4 +1,4 @@
-<script lang="ts">
+<script lang="ts" type="module">
     import * as THREE from 'three';
     import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils';
     import { PCDLoader } from 'three/examples/jsm/loaders/PCDLoader.js';
@@ -26,11 +26,11 @@
         document.body.appendChild( container );
         
         camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 20 );
-        camera.position.set( -1, 1, 1 );
+        camera.position.set( 0, 0, 1 );
         camera.lookAt(0, 0, 0);
 
         scene = new THREE.Scene();
-        material = new THREE.PointsMaterial( { color: 0x000000, size: 1 } );
+        material = new THREE.PointsMaterial( { color: 0x000000, size: 10 } );
 
         const loader = new PCDLoader();
         loader.load( 
