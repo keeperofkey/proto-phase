@@ -1,0 +1,81 @@
+[
+
+{"name":"gltf","scope":"unscoped","version":"1.0.3","description":"Builds COLLADA2GLTF tool","date":"2016-07-21T17:27:23.829Z","links":{"npm":"https://www.npmjs.com/package/gltf"},"author":{"name":"Dusan Maliarik"},"publisher":{"username":"skrat","email":"dusan.maliarik@gmail.com"},"maintainers":[{"username":"skrat","email":"dusan.maliarik@gmail.com"}]}
+
+,
+
+{"name":"@google/model-viewer","scope":"google","version":"3.1.1","description":"Easily display interactive 3D models on the web and in AR!","keywords":["ar","gltf","glb","webar","webvr","webxr","arcore","arkit","webaronarcore","webaronarkit","augmented reality","model-viewer","3d"],"date":"2023-04-25T22:07:18.492Z","links":{"npm":"https://www.npmjs.com/package/%40google%2Fmodel-viewer","homepage":"https://github.com/google/model-viewer#readme","repository":"https://github.com/google/model-viewer","bugs":"https://github.com/google/model-viewer/issues"},"publisher":{"username":"google-wombot","email":"node-team-npm+wombot@google.com"},"maintainers":[{"username":"smalls","email":"small@splendous.net"},{"username":"jsantell","email":"jordan@jsantell.com"},{"username":"cdata","email":"chris@scriptolo.gy"},{"username":"google-wombot","email":"node-team-npm+wombot@google.com"}]}
+
+,
+
+{"name":"@sayduck/gltf-pipeline","scope":"sayduck","version":"3.3.9-pre-1","description":"Node package holding all of Sayduck's scripts to convert assets and products to glTF 2.0","date":"2023-05-09T05:52:44.625Z","links":{"npm":"https://www.npmjs.com/package/%40sayduck%2Fgltf-pipeline"},"author":{"name":"Silvain Toromanoff"},"publisher":{"username":"felixsayduck","email":"felix@sayduck.com"},"maintainers":[{"username":"sam_sayduck","email":"samuel.hakala+npmjs@sayduck.com"},{"username":"coleman-rose","email":"coleman.rose@sayduck.com"},{"username":"qtruongngoc95","email":"quang.truong+npmjs@sayduck.com"},{"username":"joelsayduck","email":"joel@sayduck.com"},{"username":"danielgato","email":"daniel@sayduck.com"},{"username":"felixsayduck","email":"felix@sayduck.com"}]}
+
+,
+
+{"name":"x_ite","scope":"unscoped","version":"8.7.8","description":"X_ITE X3D Browser, view and manipulate X3D and VRML scenes in HTML.","keywords":["3D","Browser","Electron","Framework","GLB","glTF2","JavaScript","JSON","Node","STL","SVG","VRML","Wavefront-OBJ","WebGL","wrl","X3D","XML"],"date":"2023-06-01T09:59:33.406Z","links":{"npm":"https://www.npmjs.com/package/x_ite","homepage":"https://create3000.github.io/x_ite/","repository":"https://github.com/create3000/x_ite","bugs":"https://github.com/create3000/x_ite/issues"},"author":{"name":"Holger Seelig","email":"holger.seelig@gmail.com"},"publisher":{"username":"create3000","email":"holger.seelig@yahoo.de"},"maintainers":[{"username":"create3000","email":"holger.seelig@yahoo.de"}]}
+
+,
+
+{"name":"@westmoon/model-viewer","scope":"westmoon","version":"2.1.1","description":"Easily display interactive 3D models on the web and in AR!","keywords":["ar","gltf","glb","webar","webvr","webxr","arcore","arkit","webaronarcore","webaronarkit","augmented reality","model-viewer","3d"],"date":"2022-12-20T08:57:10.667Z","links":{"npm":"https://www.npmjs.com/package/%40westmoon%2Fmodel-viewer"},"publisher":{"username":"westmoon","email":"dev@westmoon.kr"},"maintainers":[{"username":"westmoon","email":"dev@westmoon.kr"}]}
+
+,
+
+{"name":"@khronosgroup/gltf-asset-auditor","scope":"khronosgroup","version":"1.0.3","description":"Package for checking a 3D model file against a 3D Commerce use case schema to provide PASS/FAIL validation","keywords":["3d","asset","commerce","glb","gltf","khronos","auditor","validator"],"date":"2023-04-12T15:29:15.003Z","links":{"npm":"https://www.npmjs.com/package/%40khronosgroup%2Fgltf-asset-auditor","homepage":"https://github.com/KhronosGroup/gltf-asset-auditor#readme","repository":"https://github.com/KhronosGroup/gltf-asset-auditor","bugs":"https://github.com/KhronosGroup/gltf-asset-auditor/issues"},"author":{"name":"Mike Festa"},"publisher":{"username":"mikefesta","email":"mike@festatech.com"},"maintainers":[{"username":"mikefesta","email":"mike@festatech.com"},{"username":"khronos","email":"webmaster@khronos.org"},{"username":"emackey","email":"ed-cesium@snappymaria.com"},{"username":"donmccurdy","email":"dm@donmccurdy.com"},{"username":"ux3d_haertl","email":"haertl@ux3d.io"},{"username":"mobec","email":"becher@ux3d.io"}]}
+
+,
+
+{"name":"@gltf-transform/core","scope":"gltf-transform","version":"3.4.0","description":"glTF 2.0 SDK for JavaScript and TypeScript, on Web and Node.js.","keywords":["gltf","3d","model","webgl","threejs"],"date":"2023-05-30T15:12:12.467Z","links":{"npm":"https://www.npmjs.com/package/%40gltf-transform%2Fcore","homepage":"https://gltf-transform.donmccurdy.com/","repository":"https://github.com/donmccurdy/glTF-Transform","bugs":"https://github.com/donmccurdy/glTF-Transform/issues"},"author":{"name":"Don McCurdy","email":"dm@donmccurdy.com","username":"donmccurdy"},"publisher":{"username":"donmccurdy","email":"dm@donmccurdy.com"},"maintainers":[{"username":"donmccurdy","email":"dm@donmccurdy.com"}]}
+
+,
+
+{"name":"@beilinson/model-viewer","scope":"beilinson","version":"3.1.6","description":"Easily display interactive 3D models on the web and in AR!","keywords":["ar","gltf","glb","webar","webvr","webxr","arcore","arkit","webaronarcore","webaronarkit","augmented reality","model-viewer","3d"],"date":"2023-04-01T01:15:09.519Z","links":{"npm":"https://www.npmjs.com/package/%40beilinson%2Fmodel-viewer","homepage":"https://github.com/google/model-viewer#readme","repository":"https://github.com/google/model-viewer","bugs":"https://github.com/google/model-viewer/issues"},"publisher":{"username":"beilinson","email":"adam.v.beili@gmail.com"},"maintainers":[{"username":"beilinson","email":"adam.v.beili@gmail.com"}]}
+
+,
+
+{"name":"@egjs/ngx-view3d","scope":"egjs","version":"2.3.1","description":"Fast & Customizable glTF 3D model viewer, packed with full of features!","date":"2023-02-21T07:44:48.937Z","links":{"npm":"https://www.npmjs.com/package/%40egjs%2Fngx-view3d","homepage":"https://naver.github.io/egjs-view3d/","repository":"https://github.com/naver/egjs-view3d/tree/master","bugs":"https://github.com/naver/egjs-view3d/issues"},"author":{"name":"NAVER Corp."},"publisher":{"username":"woodneck","email":"saiyu915@naver.com"},"maintainers":[{"username":"braixen","email":"malangfox@naver.com"},{"username":"ajaxpf","email":"ajaxpf@gmail.com"},{"username":"jongmoon","email":"jongmoon.yoon@navercorp.com"},{"username":"sculove","email":"sculove@gmail.com"},{"username":"happyhj","email":"heejae.kim@navercorp.com"},{"username":"mixed","email":"i.nevalose@gmail.com"},{"username":"netil","email":"alberto.park@gmail.com"},{"username":"younkue","email":"daybrush@gmail.com"},{"username":"woodneck","email":"saiyu915@naver.com"}]}
+
+,
+
+{"name":"@gltf-transform/extensions","scope":"gltf-transform","version":"3.4.0","description":"Adds extension support to @gltf-transform/core","keywords":["gltf","3d","model","webgl","threejs"],"date":"2023-05-30T15:12:13.742Z","links":{"npm":"https://www.npmjs.com/package/%40gltf-transform%2Fextensions","homepage":"https://gltf-transform.donmccurdy.com/extensions.html","repository":"https://github.com/donmccurdy/glTF-Transform","bugs":"https://github.com/donmccurdy/glTF-Transform/issues"},"author":{"name":"Don McCurdy","email":"dm@donmccurdy.com","username":"donmccurdy"},"publisher":{"username":"donmccurdy","email":"dm@donmccurdy.com"},"maintainers":[{"username":"donmccurdy","email":"dm@donmccurdy.com"}]}
+
+,
+
+{"name":"@gltf-transform/functions","scope":"gltf-transform","version":"3.4.0","description":"Functions for common glTF modifications, written using the core API","keywords":["gltf","3d","model","webgl","threejs"],"date":"2023-05-30T15:12:15.312Z","links":{"npm":"https://www.npmjs.com/package/%40gltf-transform%2Ffunctions","homepage":"https://gltf-transform.donmccurdy.com/functions.html","repository":"https://github.com/donmccurdy/glTF-Transform","bugs":"https://github.com/donmccurdy/glTF-Transform/issues"},"author":{"name":"Don McCurdy","email":"dm@donmccurdy.com","username":"donmccurdy"},"publisher":{"username":"donmccurdy","email":"dm@donmccurdy.com"},"maintainers":[{"username":"donmccurdy","email":"dm@donmccurdy.com"}]}
+
+,
+
+{"name":"tiny-viewer","scope":"unscoped","version":"2.0.0","description":"This project created for easy displaying 3D scenes in React applications using three.js","keywords":["viewer","3d models","glb","gltf","loader","three.js","react"],"date":"2023-01-22T16:45:37.676Z","links":{"npm":"https://www.npmjs.com/package/tiny-viewer","homepage":"https://github.com/LEMing/TinyViewer#readme","repository":"https://github.com/LEMing/TinyViewer","bugs":"https://github.com/LEMing/TinyViewer/issues"},"author":{"name":"Alexey Degtyarik","url":"LEM_ing"},"publisher":{"username":"muhmundr","email":"muhmundr@gmail.com"},"maintainers":[{"username":"muhmundr","email":"muhmundr@gmail.com"}]}
+
+,
+
+{"name":"@beilinson/model-viewer-effects","scope":"beilinson","version":"1.0.0","description":"Easily add and combine post-processing effects with <model-viewer>!","keywords":["ar","gltf","glb","webar","webvr","webxr","arcore","arkit","webaronarcore","webaronarkit","augmented reality","model-viewer","model-viewer-effects","3d","post","processing","effect","filter"],"date":"2023-04-01T01:24:02.425Z","links":{"npm":"https://www.npmjs.com/package/%40beilinson%2Fmodel-viewer-effects","homepage":"https://github.com/Beilinson/model-viewer/tree/post-processing/packages/model-viewer-effects#readme","repository":"https://github.com/Beilinson/model-viewer/tree/post-processing","bugs":"https://github.com/google/model-viewer/issues"},"author":{"name":"Adam Beili","email":"adam.v.beili@gmail.com","username":"beilinson"},"publisher":{"username":"beilinson","email":"adam.v.beili@gmail.com"},"maintainers":[{"username":"beilinson","email":"adam.v.beili@gmail.com"}]}
+
+,
+
+{"name":"@r2u/model-viewer","scope":"r2u","version":"1.10.11","description":"Easily display interactive 3D models on the web and in AR!","keywords":["ar","gltf","glb","webar","webvr","webxr","arcore","arkit","webaronarcore","webaronarkit","augmented reality","model-viewer","3d"],"date":"2022-05-12T15:03:24.259Z","links":{"npm":"https://www.npmjs.com/package/%40r2u%2Fmodel-viewer","homepage":"https://github.com/google/model-viewer#readme","repository":"https://github.com/google/model-viewer","bugs":"https://github.com/google/model-viewer/issues"},"publisher":{"username":"joseborinr2u","email":"jose.borin@r2u.io"},"maintainers":[{"username":"joseborinr2u","email":"jose.borin@r2u.io"},{"username":"aviggiano","email":"agfviggiano@gmail.com"}]}
+
+,
+
+{"name":"gltf-pipeline","scope":"unscoped","version":"4.1.0","description":"Content pipeline tools for optimizing glTF assets.","keywords":["glTF","WebGL"],"date":"2023-04-21T17:30:17.118Z","links":{"npm":"https://www.npmjs.com/package/gltf-pipeline","homepage":"https://github.com/CesiumGS/gltf-pipeline","repository":"https://github.com/CesiumGS/gltf-pipeline","bugs":"https://github.com/CesiumGS/gltf-pipeline/issues"},"publisher":{"username":"lilleyse","email":"lilleyse@gmail.com"},"maintainers":[{"username":"pjcozzi","email":"pjcozzi@gmail.com"},{"username":"mramato","email":"matt.amato@gmail.com"},{"username":"lilleyse","email":"lilleyse@gmail.com"},{"username":"shehzan10","email":"zakiuddinsmohammed@gmail.com"},{"username":"cesiumgsadmin","email":"devops@cesium.com"}]}
+
+,
+
+{"name":"x3d-tidy","scope":"unscoped","version":"1.0.36","description":"X3D Converter, Beautifier and Minimizer","keywords":["glTF2","JSON","STL","VRML","Wavefront-OBJ","wrl","XML","beautifier","Compressor","converter","GLB","Minimizer","npx","SVG","tidy","x_ite","X3D"],"date":"2023-06-01T09:59:49.595Z","links":{"npm":"https://www.npmjs.com/package/x3d-tidy","homepage":"https://www.npmjs.com/package/x3d-tidy","repository":"https://github.com/create3000/x3d-tidy","bugs":"https://github.com/create3000/x3d-tidy/issues"},"author":{"name":"Holger Seelig"},"publisher":{"username":"create3000","email":"holger.seelig@yahoo.de"},"maintainers":[{"username":"create3000","email":"holger.seelig@yahoo.de"}]}
+
+,
+
+{"name":"esbuildway","scope":"unscoped","version":"1.0.4","description":"dracoLoader.setDecoderPath('static/js/loaders/draco/')  +static","keywords":["3d","viewer","engine","obj","mtl","fbx","3dm","3ds","3mf","amf","dae","drc","glb","gltf","js/json","ifc","kmz","ldr/mpd","md2","pcd","ply","stl","svg","usdz","zip","usdz","vox","vtk","vtp","wrl","xyz"],"date":"2023-02-10T10:35:53.428Z","links":{"npm":"https://www.npmjs.com/package/esbuildway"},"author":{"name":"xkx"},"publisher":{"username":"gaga2020","email":"271295492@qq.com"},"maintainers":[{"username":"gaga2020","email":"271295492@qq.com"}]}
+
+,
+
+{"name":"@loaders.gl/gltf","scope":"loaders.gl","version":"3.4.4","description":"Framework-independent loader for the glTF format","keywords":["webgl","loader","3d","mesh","point cloud","GLB","glTF"],"date":"2023-05-24T21:27:15.103Z","links":{"npm":"https://www.npmjs.com/package/%40loaders.gl%2Fgltf","homepage":"https://github.com/visgl/loaders.gl#readme","repository":"https://github.com/visgl/loaders.gl","bugs":"https://github.com/visgl/loaders.gl/issues"},"publisher":{"username":"ibgreen","email":"ib@unfolded.ai"},"maintainers":[{"username":"felixpalmer","email":"felixpalmer+npm@gmail.com"},{"username":"openjs-operations","email":"operations@openjsf.org"},{"username":"pessimistress","email":"cxiaoji@gmail.com"},{"username":"kylebarron","email":"kylebarron2@gmail.com"},{"username":"manassra","email":"wesam.manassra@gmail.com"},{"username":"ibgreen","email":"ib@unfolded.ai"},{"username":"alasarr","email":"albertoasuero@gmail.com"},{"username":"dryabinin","email":"daniil.ryabinin@actionengine.com"},{"username":"belom88","email":"belom88@yandex.ru"}]}
+
+,
+
+{"name":"aframe-gltf-part-component","scope":"unscoped","version":"1.2.0","description":"A component to extract parts from a GLTF model into their own A-Frame entities.","keywords":["aframe","aframe-component","aframe-vr","vr","mozvr","webvr","gltf-part"],"date":"2018-05-19T00:38:08.533Z","links":{"npm":"https://www.npmjs.com/package/aframe-gltf-part-component","homepage":"https://github.com/ngokevin/kframe#readme","repository":"https://github.com/ngokevin/kframe","bugs":"https://github.com/ngokevin/kframe/issues"},"author":{"name":"Kevin Ngo","email":"me@ngokevin.com"},"publisher":{"username":"ngokevin","email":"me@ngokevin.com"},"maintainers":[{"username":"dmarcos","email":"diego.marcos@gmail.com"},{"username":"ngokevin","email":"ktngo09@gmail.com"}]}
+
+,
+
+{"name":"gltfjsx-webp","scope":"unscoped","version":"1.0.7","description":"GLTF to JSX converter with WebP compression for textures","keywords":["gltf","jsx","react","fiber","three","threejs","webp"],"date":"2022-12-01T05:00:32.574Z","links":{"npm":"https://www.npmjs.com/package/gltfjsx-webp","homepage":"https://github.com/pmndrs/gltfjsx#readme","repository":"https://github.com/reflektor-digital-inc/gltfjsx-webp","bugs":"https://github.com/pmndrs/gltfjsx/issues"},"author":{"name":"Max Rusan & Paul Henschel"},"publisher":{"username":"maxreflektor","email":"max@reflektor.digital"},"maintainers":[{"username":"maxreflektor","email":"max@reflektor.digital"}]}
+]
+
