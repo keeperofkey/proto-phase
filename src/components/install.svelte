@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
+  import mod from 'astro/zod';
 
 
 
@@ -33,14 +34,15 @@ function init(this: any) {
     new GLTFLoader()
         .setPath( 'models/' )
         .setMeshoptDecoder( MeshoptDecoder )
-        .load( 'mesh-packed-one.glb', function ( gltf: any ) {
+        .load( 'mesh-one-anim.glb', function ( gltf: any ) {
             gltf.scene.up.set( 0, 0, 1 );
             anim = gltf.animations;
             camera = gltf.cameras[0];
             mixer = new THREE.AnimationMixer( gltf )
             action = mixer.clipAction( anim[0], camera );
             model = gltf.scene.children[0].children[0];
-            
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
 
             console.log(anim)
             console.log(camera)
@@ -67,6 +69,7 @@ function init(this: any) {
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
     container.appendChild( renderer.domElement );
+
 
     const environment = new RoomEnvironment();
     const pmremGenerator = new THREE.PMREMGenerator( renderer );
@@ -97,19 +100,21 @@ function onScroll() {
 }
 let internalId: NodeJS.Timer
 
-  function onMouseDown() {
-    // console.log('mouse down')
-    internalId = setInterval(() => {
-      model.rotation.y += 0.1;
-    }, 25);
+function onMouseDown() {
+  // console.log('mouse down')
+  internalId = setInterval(() => {
+    if (scene.environment) {
+      console.log(scene.environment);
+    }
+  }, 25);
 
-  }
+}
 
-  function onMouseUp() {
-    // console.log('mouse up')
-    model.rotation.set(0, 0, 0);
-    clearInterval(internalId);
-  }
+function onMouseUp() {
+  // console.log('mouse up')
+  model.rotation.set(0, 0, 0);
+  clearInterval(internalId);
+}
 
   window.addEventListener('mousedown', onMouseDown);
   window.addEventListener('mouseup', onMouseUp);
