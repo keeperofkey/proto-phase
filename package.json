@@ -22,6 +22,7 @@
     "sass": "^1.62.1",
     "scss": "^0.2.4",
     "svelte": "^3.59.1",
+    "three-shader-graph": "^0.1.19",
     "vite-plugin-glsl": "^1.1.2"
   },
   "devDependencies": {

@@ -1,4 +1,3 @@
-<div class="stage"></div>
 <script lang=ts>
 import * as THREE from 'three';
 

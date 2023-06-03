@@ -1,8 +1,8 @@
 ---
 import Style from '../styles/index.scss'
-import Joya from '../pages/joya.astro'
 import Cube from '../components/Cube.svelte'
-import Glb from '../components/glb.svelte'
+import Joya from '../components/joya.svelte'
+import Install from '../components/install.svelte';
 
 
 
@@ -19,9 +19,9 @@ import Glb from '../components/glb.svelte'
 		</script>
 	</head>
 	<body>
-		<Glb client:only />
 		<div id="copy">
 			<h1>Liam Dodd</h1>
+			<!-- <Joya client:only /> -->
 			<h2>Welcome to my little corner of the internet!</h2>
 			<h3>Here you'll find all sorts of weird things that tickle my fancy.</h3>
 			<h4>Perhaps there is something for you too? </h4>
@@ -29,7 +29,8 @@ import Glb from '../components/glb.svelte'
 			<h4>If any questions come up don't hesitate to ask!</h4>
 			<h2><a href="/joya/">Joya</a></h2>
 		</div>
-		<div class="stage"></div>
+		<Install client:only />
+		<div id="stage"></div>
 	</body>
 	<style lang="scss">
     	$beaver: #8C7865ff;
@@ -81,7 +82,7 @@ import Glb from '../components/glb.svelte'
 		a:hover {
 			color: orange;
 		}
-		.stage {
+		#stage {
 			height: 800vh;
 		}
 	</style>

@@ -11,7 +11,7 @@
   let points: THREE.Points, material: THREE.ShaderMaterial;
 
   init();
-//   animate();
+  animate();
 
   function init() {
     // Create the renderer
