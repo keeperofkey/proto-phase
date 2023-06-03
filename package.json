@@ -18,9 +18,11 @@
     "@gltf-transform/extensions": "^3.4.0",
     "@gltf-transform/functions": "^3.4.0",
     "astro": "^2.4.3",
+    "glsl-curl-noise": "^0.0.4",
     "sass": "^1.62.1",
     "scss": "^0.2.4",
-    "svelte": "^3.59.1"
+    "svelte": "^3.59.1",
+    "vite-plugin-glsl": "^1.1.2"
   },
   "devDependencies": {
     "@theatre/core": "^0.6.0",
@@ -30,6 +32,7 @@
     "@threlte/preprocess": "^0.0.2",
     "@threlte/theatre": "^0.0.2",
     "@types/three": "^0.152.1",
+    "glsl-noise": "^0.0.0",
     "svelte-sequential-preprocessor": "^1.0.0",
     "three": "^0.152.2"
   }

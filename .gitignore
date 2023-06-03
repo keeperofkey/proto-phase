@@ -4,6 +4,8 @@ dist/
 .astro/
 # heavy models
 public/models/willow.pcd
+# gltf transform
+geo/
 # dependencies
 node_modules/
 
