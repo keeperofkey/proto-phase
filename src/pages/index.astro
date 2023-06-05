@@ -20,67 +20,42 @@ import Install from '../components/install.svelte';
 	</head>
 	<body>
 		<div id="copy">
-			<h1>Liam Dodd</h1>
+			<h1>Hi!</h1><svg></svg>
 			<!-- <Joya client:only /> -->
 			<h2>Welcome to my little corner of the internet!</h2>
 			<h3>Here you'll find all sorts of weird things that tickle my fancy.</h3>
 			<h4>Perhaps there is something for you too? </h4>
 			<h4>Take a look around! </h4>
-			<h4>If any questions come up don't hesitate to ask!</h4>
+			<h4>If any questions come up don't hesitate to <a href="/contact/">ask!</a></h4>
 			<h2><a href="/joya/">Joya</a></h2>
 		</div>
 		<Install client:only />
 		<div id="stage"></div>
 	</body>
 	<style lang="scss">
-    	$beaver: #8C7865ff;
-    	$silver: #BABABAff;
-    	$dim-gray: #686862ff;
-    	$jet: #2B2C2Cff;
-    	$battleship-gray: #87837Eff;
+		@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+		$white: #f9f3fd;
+		$main: #780dca;
+		$secondary: #89ca39;
+		$accent: #fb9118;
+		$black: #38230a;
 
-
-		#copy {
-			display: grid;
-			grid-template-columns: repeat(1,1fr);
-			grid-template-rows: auto;
-			column-gap: 100vh;
-			row-gap: 100vh;
-			font-family: monospace;
-		}
-		#copy h1 {
-			color: $jet;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-		#copy h2 {
-			color: $silver;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-		#copy h3 {
-			color: $beaver;
-			text-align: center;
-			margin: 0;
-			padding: 0;
-		}
-		#copy h4 {
-			color: $dim-gray;
-			text-align: center;
-			margin: 0;
-			padding: 0;
+		body {
+			background-color: $white;
+			color: $main;
+			font-family: "Source Code Pro", monospace;
+			font-size: 1.5rem;
+			font-weight: 800;
 		}
 		a {
 			text-decoration-line: none;
-			color: ghostwhite;
+			color: $secondary;
 		}
 		a:visited {
-			color: ghostwhite;
+			color: $secondary;
 		}
 		a:hover {
-			color: orange;
+			color: $accent;
 		}
 		#stage {
 			height: 800vh;

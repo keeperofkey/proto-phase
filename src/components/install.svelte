@@ -10,6 +10,7 @@ import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment
 
 let camera: THREE.PerspectiveCamera, scene: THREE.Scene, renderer: THREE.WebGLRenderer 
 let model: THREE.Object3D<THREE.Event>
+let mat: THREE.MeshBasicMaterial
 let anim: THREE.AnimationClip[]
 let mixer: THREE.AnimationMixer
 let action: THREE.AnimationAction
@@ -34,17 +35,21 @@ function init(this: any) {
     new GLTFLoader()
         .setPath( 'models/' )
         .setMeshoptDecoder( MeshoptDecoder )
-        .load( 'mesh-one-anim.glb', function ( gltf: any ) {
+        .load( 'mesh-one-anim-24.glb', function ( gltf: any ) {
             gltf.scene.up.set( 0, 0, 1 );
+            
             anim = gltf.animations;
             camera = gltf.cameras[0];
             mixer = new THREE.AnimationMixer( gltf )
             action = mixer.clipAction( anim[0], camera );
+            
             model = gltf.scene.children[0].children[0];
+            mat = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, vertexColors: true, wireframeLinewidth: 5 } );
+            model.material = mat;
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
 
-            console.log(anim)
+            console.log(model)
             console.log(camera)
             action.play()
             action.paused = true;
