@@ -3,32 +3,30 @@ import Style from '../styles/index.scss'
 import Cube from '../components/Cube.svelte'
 import Joya from '../components/joya.svelte'
 import Install from '../components/install.svelte';
-
-
-
+import { Image } from 'astro:assets';
+import Welcome from '../components/Welcome.svelte';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Liam Dodd</title>
-		<script>
-		</script>
+		<title>Home</title>
+		<meta name="description" content="Welcome to my little corner of the internet!" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-		<div id="copy">
-			<h1>Hi!</h1><svg></svg>
-			<!-- <Joya client:only /> -->
+
+		<div id="welcome"><Welcome client:load /></div>
+		<!-- <div id="copy">
+			<h1>Hi!</h1>
+			<Joya client:only />
 			<h2>Welcome to my little corner of the internet!</h2>
 			<h3>Here you'll find all sorts of weird things that tickle my fancy.</h3>
 			<h4>Perhaps there is something for you too? </h4>
 			<h4>Take a look around! </h4>
 			<h4>If any questions come up don't hesitate to <a href="/contact/">ask!</a></h4>
 			<h2><a href="/joya/">Joya</a></h2>
-		</div>
+		</div> -->
 		<Install client:only />
 		<div id="stage"></div>
 	</body>
@@ -59,6 +57,17 @@ import Install from '../components/install.svelte';
 		}
 		#stage {
 			height: 800vh;
+		}
+		#welcome {
+			position: fixed;
+			top: 20;
+			left: 20;
+			z-index: 100;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: opacity 1s ease-in-out;
+			opacity: 1;
 		}
 	</style>
 </html>

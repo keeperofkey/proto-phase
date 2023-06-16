@@ -45,7 +45,7 @@ function init(this: any) {
             
             model = gltf.scene.children[0].children[0];
             mat = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, vertexColors: true, wireframeLinewidth: 5 } );
-            model.material = mat;
+            // model.material = mat;
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
 
@@ -109,7 +109,6 @@ function onMouseDown() {
   // console.log('mouse down')
   internalId = setInterval(() => {
     if (scene.environment) {
-      console.log(scene.environment);
     }
   }, 25);
 
